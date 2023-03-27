@@ -4,10 +4,19 @@ const Animal = require("../models/animals.models")
 
 router.get("/animals", async function(request, response, next){
     try {
-       let result =  await Animal.find()
+       let result =  await Animal.find();
        return response.status(200).json(result)
     } catch (error) {
        return next(error) 
+    }
+})
+
+router.get("/animals/:id", async function(request,response,next){
+    try {
+        let result = await Animal.findById()
+        return response.status(200).json(result)
+    } catch (error) {
+        return next(error)   
     }
 })
 

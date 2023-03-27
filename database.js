@@ -4,6 +4,5 @@ const connectionString = `mongodb+srv://${process.env.MONGO_USER}:${process.env.
 
 connect(connectionString, {
     useNewUrlParser: true,
-    useUnifiedTopology:true,
-   
+    useUnifiedTopology:true, 
 })
