@@ -13,7 +13,7 @@ router.get("/animals", async function(request, response, next){
 
 router.get("/animals/:id", async function(request,response,next){
     try {
-        let result = await Animal.findById()
+        let result = await Animal.findById(request.params.id)
         return response.status(200).json(result)
     } catch (error) {
         return next(error)   
